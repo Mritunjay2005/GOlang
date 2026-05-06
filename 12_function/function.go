@@ -24,8 +24,8 @@ func processIt(fn func(a int) int) {
 	fn(1)
 }
 
-func processIt2() func(a int) int {
-	return func(a int) int {
+func processIt2() func(a int) int {//this a function
+	return func(a int) int {//this ia a anonymous fn. , which can be created in go and can be returned from another function
 		return 2
 	}
 }
