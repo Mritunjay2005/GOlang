@@ -8,13 +8,15 @@ import (
 //  A type that implements all the methods of an interface is said to satisfy that interface.
 //  Interfaces are used to achieve polymorphism in Go, allowing different types to be treated as the same type through the use of interfaces.
 
+// method 3
 type paymenter interface {
 	pay(amt float64) // it work like a contract
 }
 type payment struct {
 	//methode 2
-	gatway strip //this is a concreate implementation of paymenter interface but it is not flexible because if we want to switch to razorpay then we have to change the code here also so we do somthing like ↴
-
+	//gatway strip//this is a concreate implementation of paymenter interface but it is not flexible because if we want to switch to razorpay then we have to change the code here also so we do somthing like ↴
+	//method 3
+	gatway paymenter // this is a interface type and we can assign any struct that implements the paymenter interface to this variable
 }
 
 func (p payment) makePayement(amt float64) {
@@ -48,11 +50,24 @@ func (s strip) pay(amt float64) {
 	fmt.Printf("Payment of %f made using Strip\n", amt)
 }
 
+type paypal struct{}
+
+func (p paypal) pay(amt float64) {
+	// logic to make payment using paypal
+	fmt.Printf("Payment of %f made using Paypal\n", amt)
+}
 func main() {
-	stripPaymentGw := strip{}
+	//stripPaymentGw := strip{}
+	// now we want to switch to paypal then we can do like this ↴
+	paypalPayementGw := paypal{}
 	pay := payment{
-		gatway: stripPaymentGw,
+		//gatway: stripPaymentGw,
+		gatway: paypalPayementGw,
 	}
 
 	pay.makePayement(100.0)
 }
+
+// here waht happened was that when we create a interface and then we create a struct that implements that interface then we can use that struct to call the method
+//here we are not using implement like w e do in other programming language because
+//in go it understand that ifa struct/method have same name and parameter then it is implementing that interface
