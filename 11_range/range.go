@@ -6,8 +6,14 @@ import (
 
 func main() {
 	// range is used to iterate over elements in a variety of data structures.
-	
-	
+	//in Go, range only works with:
+									// slices
+									// arrays
+									// maps
+									// strings
+									// channels
+									// 👉 Not plain integers.
+										
 	//slice
 	nums:= []int{5,6,7,8}
 
