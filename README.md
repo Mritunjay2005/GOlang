@@ -4,6 +4,8 @@
 
 Hi 👋 I’m Mritunjay, and this repository is my public journey of learning Go (Golang).
 
+🎯 This repository follows a structured 10-day GoLang learning journey designed for beginners to build consistency and practical coding habits.
+
 💡 I’m documenting everything I learn daily so anyone can:
 
 Learn Go from scratch
