@@ -45,7 +45,7 @@ The converter supports:
        ├── photo2.txt
        ├── photo3.txt
        └── logo.txt
-exit
+
 ```
 ---
 
@@ -56,7 +56,7 @@ Only change these 2 lines at the top if you want to use custom folders:
 ```bash
 const inputFolder  = "images"    // 📁 folder with all your images
 const outputFolder = "output"    // 📁 where all .txt files get saved
-exit
+
 ```
 
 ---
@@ -67,7 +67,7 @@ Navigate to the project folder and run:
 
 ```bash
 go run image_to_ascii.go
-exit
+
 ```
 
 ---
@@ -86,12 +86,12 @@ exit
 ========================================
 ✅ Success : 4
 📁 All outputs saved in: ./output/
-exit
+
 ```
 
 ---
 
-##🧩 How It Works
+## 🧩 How It Works
 
 Put all your images inside the images/ folder
 Run the Go file
@@ -101,7 +101,7 @@ Saves the output as .txt files inside the output/ folder
 
 ---
 
-##🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 Language: Go (Golang)
 Libraries Used: Standard Go libraries only
@@ -109,7 +109,7 @@ External Packages: None
 
 --- 
 
-##🎯 Learning Goal
+## 🎯 Learning Goal
 
 This project is part of my Golang Learning Journey, where I build practical beginner-friendly projects to strengthen my understanding of Go through hands-on development.
 
