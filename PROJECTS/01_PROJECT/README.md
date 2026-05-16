@@ -45,7 +45,8 @@ The converter supports:
        ├── photo2.txt
        ├── photo3.txt
        └── logo.txt
-
+exit
+```
 ---
 
 ## ⚙️ Configuration
