@@ -56,6 +56,8 @@ Only change these 2 lines at the top if you want to use custom folders:
 ```bash
 const inputFolder  = "images"    // 📁 folder with all your images
 const outputFolder = "output"    // 📁 where all .txt files get saved
+exit
+```
 
 ---
 
@@ -65,6 +67,8 @@ Navigate to the project folder and run:
 
 ```bash
 go run image_to_ascii.go
+exit
+```
 
 ---
 
@@ -82,6 +86,8 @@ go run image_to_ascii.go
 ========================================
 ✅ Success : 4
 📁 All outputs saved in: ./output/
+exit
+```
 
 ---
 
