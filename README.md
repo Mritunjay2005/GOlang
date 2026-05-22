@@ -47,7 +47,8 @@ go run main.go
 By the end of this journey:
 
 Strong understanding of Go
-Build real-world projects
+Build real-world projects - PROJECT{folder}
+Each project folder conatain there own README.md file containing there details.
 Help others learn Go easily
 ⭐ If You’re Learning Go
 
