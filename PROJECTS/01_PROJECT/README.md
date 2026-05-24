@@ -114,7 +114,3 @@ External Packages: None
 This project is part of my Golang Learning Journey, where I build practical beginner-friendly projects to strengthen my understanding of Go through hands-on development.
 
 ---
-
-## ⭐ Support
-
-If you found this project helpful, consider giving it a star ⭐ on GitHub.
