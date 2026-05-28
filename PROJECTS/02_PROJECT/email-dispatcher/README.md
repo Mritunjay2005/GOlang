@@ -4,7 +4,6 @@
 3. **The Worker Pool (`consumer.go`):** Parallel worker routines initialized simultaneously via tracking parameters. Each worker reads from the centralized channel, constructs independent memory blocks, executes templates, and dispatches to the local server.
 4. **The Synchronization Gate (`main.go`):** Managed via a `sync.WaitGroup` to block main context termination until every active routine reports `Done()`.
 
-![diagram of the model](img1.jpeg)
 
 ---
 
