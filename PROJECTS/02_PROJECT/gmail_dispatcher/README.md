@@ -13,7 +13,7 @@ Consumers (consumer.go): A configurable pool of concurrent worker goroutines tha
 
 Synchronization (main.go): A sync.WaitGroup ensures the orchestrator stays open until all workers process their queues cleanly.
 
-![alt text](img1.jpeg)
+![diagram of the model](img1.jpeg)
 
 ## Code Evolution & Upgrades
 This project demonstrates a progression from a simple local script to a resilient, production-grade background processor:
@@ -141,4 +141,19 @@ If a specific delivery attempt hits a critical runtime failure (such as a parsin
 
 ## Operations & Management
 here is a digram explaing how the internal logic works 
-![alt text](img2.jpeg)
+![hwo the roroutine, channel, wait group work](img2.jpeg)
+
+
+## Working Prove
+ ## 1 Go teminal
+ ![termianla](<proff1 .png>)
+
+ ## 2 image of receving mail
+ ![1.](<email. profe 1.png>)
+
+ ![2.](<mailproff 2.jpeg>)
+
+ ## 3 iamge fromthe sent tab of the g-mail
+ ![sender](<sender proff.png>)
+
+ ## thing to be noted that the computer on which this program is running does not have the (sender) paticular e-mail logged in !
