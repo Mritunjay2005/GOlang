@@ -3,6 +3,8 @@ package main
 import (
 	"encoding/csv"
 	"os"
+	"io"
+	"log"
 )
 
 func loadRecipient(filePath string, ch chan Recipient) error {
@@ -13,19 +15,24 @@ func loadRecipient(filePath string, ch chan Recipient) error {
 		return err
 	}
 	defer f.Close()
+
 //reading the file 
 	r := csv.NewReader(f)
-	records, err := r.ReadAll()
-	if err != nil {
-		return err
-	}
-//
-	for _, record := range records[1:] {
-		ch <- Recipient{
-			Name:  record[0],
-			Email: record[1],
-		}
-	}
+	r.Read() // skip header row
 
-	return nil
+for {
+        record, err := r.Read()
+        if err == io.EOF {
+            break  // end of file, stop
+        }
+        if err != nil {
+            log.Printf("Error reading row: %v", err)
+            continue  // skip bad row, don't crash
+        }
+        ch <- Recipient{
+            Name:  record[0],
+            Email: record[1],
+        }
+    }
+    return nil
 }

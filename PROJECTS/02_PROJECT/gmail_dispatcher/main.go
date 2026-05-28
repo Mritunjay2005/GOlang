@@ -4,8 +4,9 @@ import (
 	"bytes"
 	"html/template"
 	"sync"
-
+	"log"
 	"github.com/codersgyan/email-dispatcher/config"
+	
 )
 
 type Recipient struct {
@@ -20,15 +21,18 @@ func main() {
 	recipientChannel := make(chan Recipient)
 
 	go func() {
-		loadRecipient("./emails.csv", recipientChannel)
+		err:= loadRecipient("./emails.csv", recipientChannel)
+		if err != nil {
+        log.Printf("Fatal: could not load recipients: %v", err)
+        // channel is already closed via defer, workers will exit cleanly
+    }
 	}()
-
 	var wg sync.WaitGroup
 	workerCount := 5
 // using the comncept of multi threading
 	for i := 1; i <= workerCount; i++ {
 		wg.Add(1)
-		go emailWorker(i, recipientChannel, &wg)
+		go emailWorker(i, recipientChannel, &wg, )
 	}
 
 	wg.Wait()
@@ -37,9 +41,8 @@ func main() {
 func executeTemplate(r Recipient) (string, error) {
 	t, err := template.ParseFiles("email.tmpl")
 	if err != nil {
-		return "", err
+		 log.Fatal("Failed to parse template:", err)
 	}
-
 	var tpl bytes.Buffer
 
 	err = t.Execute(&tpl, r)
