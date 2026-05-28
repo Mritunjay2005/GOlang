@@ -1,4 +1,4 @@
- Email  Campaign Dispatcher (Go)
+ ## Email  Campaign Dispatcher (Go)
 
  A high-performance, concurrent bulk email dispatcher built entirely in Go with zero third-party dependencies. This project serves as a lightweight, open-source alternative to paid email marketing services like Mailchimp, capable of safely dispatching up to 500 emails in under a minute using Gmail's SMTP server or a local development environment.
 
