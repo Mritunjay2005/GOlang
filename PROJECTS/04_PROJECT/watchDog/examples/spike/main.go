@@ -22,3 +22,4 @@ func main() {
         fmt.Printf("op=%-10s path=%s\n", event.Op, event.Name)
     }
 }
+
