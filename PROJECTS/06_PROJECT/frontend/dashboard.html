@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense Tracker — Dashboard</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h2><i class="fa-solid fa-wallet"></i> ExpenseTracker</h2>
+    <div>
+      <span id="user-name"></span>
+      <button onclick="logout()" class="btn-logout">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Summary Cards -->
+    <section class="cards">
+      <div class="card"><p>Total Spent</p><h3 id="total-amount">₹0.00</h3></div>
+      <div class="card"><p>This Month</p><h3 id="month-amount">₹0.00</h3></div>
+      <div class="card"><p>Top Category</p><h3 id="top-cat">—</h3></div>
+    </section>
+
+    <!-- Add / Edit Expense Form -->
+    <section class="form-section">
+      <h3>Add Expense</h3>
+      <div class="form-grid">
+        <input  id="f-title"  type="text"   placeholder="Title"/>
+        <input  id="f-amount" type="number"  placeholder="Amount" min="0" step="0.01"/>
+        <select id="f-category">
+          <option value="">Category</option>
+          <option>Food</option><option>Transport</option><option>Health</option>
+          <option>Shopping</option><option>Housing</option>
+          <option>Entertainment</option><option>Education</option><option>Other</option>
+        </select>
+        <input  id="f-date"   type="date"/>
+        <input  id="f-note"   type="text"   placeholder="Note (optional)" class="span2"/>
+        <button onclick="saveExpense()" class="span2">Save</button>
+      </div>
+      <input type="hidden" id="f-id"/>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+      <select id="filter-cat" onchange="loadExpenses()">
+        <option value="">All Categories</option>
+        <option>Food</option><option>Transport</option><option>Health</option>
+        <option>Shopping</option><option>Housing</option>
+        <option>Entertainment</option><option>Education</option><option>Other</option>
+      </select>
+      <input type="date" id="filter-from" onchange="loadExpenses()"/>
+      <input type="date" id="filter-to"   onchange="loadExpenses()"/>
+    </section>
+
+    <!-- Expense Table -->
+    <section>
+      <table id="expense-table">
+        <thead>
+          <tr>
+            <th>Date</th><th>Title</th><th>Category</th>
+            <th>Amount</th><th>Note</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="expense-body"></tbody>
+      </table>
+    </section>
+
+    <!-- Charts -->
+    <section class="charts">
+      <div><canvas id="pie-chart"></canvas></div>
+      <div><canvas id="bar-chart"></canvas></div>
+    </section>
+  </main>
+
+  <script src="js/expenses.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+</html>
