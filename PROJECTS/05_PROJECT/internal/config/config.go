@@ -9,12 +9,14 @@ import (
 )
 
 type HTTPServer struct {
-	Addr string
+	Addr string `yaml:"addr" env-required:"true"`
 }
+
+// env-default:"production"
 type Config struct {
-	Env         string `yaml: "env", env	:"ENV" , env-required: "true", env-default: "production"`
-	StoragePath string `ymal: "storage_path", env:"STORAGE_PATH", env-required: "true" ,env-default: "storage/storage.db"`
-	HTTPServer  `yaml: "http_server"`
+	Env         string `yaml:"env" env:"ENV" env-required:"true" `
+	StoragePath string `yaml:"storage_path"  env-required:"true" `
+	HTTPServer  `yaml:"http_server"`
 }
 
 func MustLoad() *Config {
@@ -37,7 +39,7 @@ func MustLoad() *Config {
 	var cfg Config
 	err := cleanenv.ReadConfig(configPath, &cfg)
 	if err != nil {
-		log.Fatalf("failed to read config file: %s", err.Error)
+		log.Fatalf("failed to read config file: %s", err.Error())
 	}
 
 	return &cfg

@@ -1,7 +1,6 @@
-module github.com/Mritunjay2005/student-api
+module github.com/Mritunjay2005/students-api
 
-go 1.26.2
-
+go 1.24
 require (
 	github.com/BurntSushi/toml v1.6.0 // indirect
 	github.com/ilyakaznacheev/cleanenv v1.5.0 // indirect
