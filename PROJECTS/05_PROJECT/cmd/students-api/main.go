@@ -1,9 +1,9 @@
 package main
 
-import (
-	"fmt"
-)
-
 func main() {
-	fmt.Println("students api")
+
+	//setip router
+	//setup server
+	//setup database
+	//load config
 }
