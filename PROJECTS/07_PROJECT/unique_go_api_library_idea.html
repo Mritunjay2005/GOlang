@@ -1,0 +1,228 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.root{font-family:var(--font-sans);padding:.5rem 0 2rem}
+.hero{border:0.5px solid var(--color-border-tertiary);border-radius:12px;overflow:hidden;margin-bottom:20px}
+.hero-top{padding:20px 20px 16px;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary)}
+.hero-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary);margin-bottom:8px}
+.hero-name{font-size:22px;font-weight:700;color:var(--color-text-primary);letter-spacing:-.02em}
+.hero-tagline{font-size:13px;color:var(--color-text-secondary);margin-top:5px;line-height:1.5}
+.hero-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.tag{font-size:10px;padding:3px 9px;border-radius:999px;font-weight:500}
+.t-unique{background:#EEEDFE;color:#3C3489}
+.t-zero{background:#EAF3DE;color:#27500A}
+.t-hard{background:#FAEEDA;color:#633806}
+.t-scope{background:var(--color-background-primary);color:var(--color-text-secondary);border:0.5px solid var(--color-border-tertiary)}
+.hero-body{padding:16px 20px}
+.section{margin-bottom:18px}
+.sec-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-tertiary);margin-bottom:8px}
+.prose{font-size:12.5px;color:var(--color-text-secondary);line-height:1.65}
+.prose strong{color:var(--color-text-primary);font-weight:500}
+pre{font-family:var(--font-mono);font-size:10.5px;background:var(--color-background-secondary);border-radius:8px;padding:12px 14px;overflow-x:auto;line-height:1.7;color:var(--color-text-primary);border:0.5px solid var(--color-border-tertiary);margin-top:6px}
+.comment{color:var(--color-text-tertiary)}
+.kw{color:#0C447C}
+.fn{color:#1D9E75}
+.str{color:#712B13}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.box{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:12px 14px}
+.box-title{font-size:11px;font-weight:600;color:var(--color-text-secondary);margin-bottom:6px}
+.box-text{font-size:12px;color:var(--color-text-tertiary);line-height:1.55}
+.vs-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
+.vs-label{font-size:10px;padding:2px 7px;border-radius:999px;font-weight:600;white-space:nowrap;min-width:54px;text-align:center}
+.vs-them{background:#FCEBEB;color:#791F1F}
+.vs-us{background:#EAF3DE;color:#27500A}
+.vs-text{font-size:12px;color:var(--color-text-secondary);line-height:1.5}
+.killer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
+.killer{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:10px 12px}
+.killer-icon{font-size:16px;margin-bottom:5px}
+.killer-title{font-size:11.5px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.killer-desc{font-size:11px;color:var(--color-text-tertiary);line-height:1.5}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:16px 0}
+.phase-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+.phase-num{width:22px;height:22px;border-radius:50%;background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:var(--color-text-secondary);flex-shrink:0}
+.phase-text{font-size:12px;color:var(--color-text-secondary);line-height:1.5}
+.phase-text strong{color:var(--color-text-primary);font-weight:500}
+.warn-box{background:#FAEEDA22;border:0.5px solid #FAC775;border-radius:8px;padding:10px 13px;font-size:12px;color:#633806;line-height:1.5;margin-top:8px}
+</style>
+
+<div class="root">
+
+<div class="hero">
+<div class="hero-top">
+  <div class="hero-label">Original library idea · Go · Built from scratch</div>
+  <div class="hero-name">Axon</div>
+  <div class="hero-tagline">A Go API library where your <strong>Go function signatures ARE the API contract</strong> — no router, no handler interface, no HTTP knowledge needed. Pure syscall-level transport, zero dependencies.</div>
+  <div class="hero-tags">
+    <span class="tag t-unique">Completely unique concept</span>
+    <span class="tag t-zero">Zero external deps</span>
+    <span class="tag t-hard">Hard to build · High reward</span>
+    <span class="tag t-scope">6–12 months</span>
+  </div>
+</div>
+
+<div class="hero-body">
+
+<div class="section">
+  <div class="sec-title">The Core Idea</div>
+  <div class="prose">
+    Every Go API library — Gin, Fiber, Echo, Chi — still makes you think in <strong>HTTP</strong>. You write handlers, register routes, parse bodies, return status codes. You are still translating between HTTP and Go.<br><br>
+    <strong>Axon flips this completely.</strong> You write normal Go functions. The library reads their signatures using reflection + generics at startup, generates the routing, serialization, validation, documentation, and transport layer <em>entirely automatically</em>. Your function signature <em>is</em> the API contract. Nothing else.<br><br>
+    The transport layer is built directly on <strong>raw TCP + a custom framing protocol</strong> — not net/http, not fasthttp, nothing. Pure <code>syscall</code> and <code>golang.org/x/sys</code> (which is a Go team package, not a third-party library).
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="sec-title">What it looks like to use</div>
+<pre><span class="comment">// You write this. Just normal Go functions.</span>
+<span class="kw">type</span> CreateUserReq <span class="kw">struct</span> {
+    Name  <span class="kw">string</span> <span class="str">`validate:"required,min=2"`</span>
+    Email <span class="kw">string</span> <span class="str">`validate:"required,email"`</span>
+    Age   <span class="kw">int</span>    <span class="str">`validate:"min=18"`</span>
+}
+
+<span class="kw">func</span> <span class="fn">CreateUser</span>(ctx context.Context, req CreateUserReq) (User, error) {
+    <span class="comment">// your business logic here</span>
+    <span class="kw">return</span> userService.Create(req)
+}
+
+<span class="kw">func</span> <span class="fn">GetUser</span>(ctx context.Context, id <span class="kw">string</span>) (User, error) {
+    <span class="kw">return</span> userService.Get(id)
+}
+
+<span class="kw">func</span> <span class="fn">ListUsers</span>(ctx context.Context, page, limit <span class="kw">int</span>) ([]User, error) {
+    <span class="kw">return</span> userService.List(page, limit)
+}
+
+<span class="comment">// Axon reads these signatures at startup and does everything else:</span>
+<span class="comment">//  → POST /create-user        (has request body)</span>
+<span class="comment">//  → GET  /get-user?id=...    (single primitive arg)</span>
+<span class="comment">//  → GET  /list-users?page=&limit= (multiple primitives)</span>
+<span class="comment">//  → validates input automatically from struct tags</span>
+<span class="comment">//  → serializes response to msgpack (binary) or JSON</span>
+<span class="comment">//  → generates OpenAPI spec from function signatures</span>
+<span class="comment">//  → error → structured error response, automatically</span>
+
+<span class="kw">func</span> <span class="fn">main</span>() {
+    app := axon.New()
+    app.Register(CreateUser, GetUser, ListUsers)
+    app.Listen(<span class="str">":8080"</span>)  <span class="comment">// starts on raw TCP, speaks HTTP/1.1 AND msgpack RPC</span>
+}</pre>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="sec-title">Why no existing library does this</div>
+  <div class="vs-row"><span class="vs-label vs-them">Gin/Echo</span><span class="vs-text">You still write c.JSON(200, result), c.ShouldBind(&req), c.Param("id"). You are an HTTP programmer, not a Go programmer.</span></div>
+  <div class="vs-row"><span class="vs-label vs-them">gRPC</span><span class="vs-text">Requires .proto files, code generation step, a separate toolchain. Your function is not the contract — the .proto is.</span></div>
+  <div class="vs-row"><span class="vs-label vs-them">go-kit</span><span class="vs-text">Encode/decode is YOUR job. You write the transport layer manually. Verbose by design.</span></div>
+  <div class="vs-row"><span class="vs-label vs-them">twirp</span><span class="vs-text">Also proto-first, not function-first. Requires codegen.</span></div>
+  <div class="vs-row"><span class="vs-label t-unique">Axon</span><span class="vs-text">Function signature IS the contract. Zero codegen. Zero HTTP knowledge needed. Zero proto files. Just Go.</span></div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="sec-title">The killer features that make it unique</div>
+  <div class="killer-grid">
+    <div class="killer">
+      <div class="killer-icon">🔍</div>
+      <div class="killer-title">Reflection-free at runtime</div>
+      <div class="killer-desc">Uses reflect only at startup to build a dispatch table. Zero reflect at request time — as fast as hand-written code.</div>
+    </div>
+    <div class="killer">
+      <div class="killer-icon">📦</div>
+      <div class="killer-title">Dual protocol</div>
+      <div class="killer-desc">Same function works over HTTP/JSON for browsers AND msgpack RPC for Go clients. Same port. Axon detects the protocol from the first byte.</div>
+    </div>
+    <div class="killer">
+      <div class="killer-icon">📄</div>
+      <div class="killer-title">OpenAPI auto-generation</div>
+      <div class="killer-desc">Generates a full OpenAPI 3.1 spec purely from Go function signatures and struct field tags. No annotations needed.</div>
+    </div>
+    <div class="killer">
+      <div class="killer-icon">⚡</div>
+      <div class="killer-title">Raw TCP transport</div>
+      <div class="killer-desc">Built on syscall-level epoll/kqueue. No net/http overhead. Custom framing protocol for the RPC path — much faster than HTTP.</div>
+    </div>
+    <div class="killer">
+      <div class="killer-icon">🛡️</div>
+      <div class="killer-title">Compile-time safety</div>
+      <div class="killer-desc">Axon validates function signatures at Register() time, not at request time. If your function signature is wrong, it fails at startup, not in production.</div>
+    </div>
+    <div class="killer">
+      <div class="killer-icon">🔄</div>
+      <div class="killer-title">Streaming built-in</div>
+      <div class="killer-desc">A function returning <code>iter.Seq[T]</code> (Go 1.22+) automatically becomes a streaming endpoint over the TCP transport.</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="sec-title">Architecture layers (all from scratch)</div>
+  <div class="two-col">
+    <div class="box">
+      <div class="box-title">Layer 1 — Transport (syscall level)</div>
+      <div class="box-text">Direct epoll (Linux) / kqueue (macOS/BSD) via <code>golang.org/x/sys</code>. Custom framing: 4-byte length prefix + 1-byte protocol flag. No net/http. Handles keep-alive, backpressure, and zero-copy reads with a ring buffer.</div>
+    </div>
+    <div class="box">
+      <div class="box-title">Layer 2 — Protocol detection</div>
+      <div class="box-text">First byte: <code>0x47</code> (G = GET) or <code>0x50</code> (P = POST) → HTTP mode. <code>0xAX</code> prefix → Axon RPC mode (msgpack). Same connection can switch per request.</div>
+    </div>
+    <div class="box">
+      <div class="box-title">Layer 3 — Reflection registry</div>
+      <div class="box-text">At startup, reads each registered function's in/out types. Builds a dispatch table: route string → (decoder func, handler func, encoder func). All closures, no reflection at runtime.</div>
+    </div>
+    <div class="box">
+      <div class="box-title">Layer 4 — Schema engine</div>
+      <div class="box-text">Walks struct field types + tags once. Generates JSON Schema, OpenAPI paths, and validation closures. Validation runs at request time via pre-compiled closures, not reflection loops.</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="sec-title">What you build on (genuinely zero external deps)</div>
+<pre><span class="comment">// go.mod — the full dependency list</span>
+<span class="kw">module</span> github.com/yourname/axon
+
+<span class="kw">go</span> 1.22
+
+<span class="kw">require</span> (
+    golang.org/x/sys  v0.x.x   <span class="comment">// Go team package — epoll/kqueue syscalls</span>
+    <span class="comment">// That's it. Nothing else.</span>
+)
+
+<span class="comment">// JSON codec      → stdlib encoding/json</span>
+<span class="comment">// Msgpack codec   → write your own (it's 200 lines — msgpack is simple)</span>
+<span class="comment">// HTTP/1.1 parser → write your own (request line + headers = 100 lines)</span>
+<span class="comment">// Validation      → struct tag parser using reflect at startup only</span>
+<span class="comment">// OpenAPI gen     → pure Go struct → JSON Schema walking</span></pre>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="sec-title">Build phases (realistic timeline)</div>
+  <div class="phase-row"><span class="phase-num">1</span><div class="phase-text"><strong>Weeks 1–3: TCP server + framing.</strong> epoll/kqueue event loop, accept connections, read framed messages into ring buffer. No HTTP yet — just raw bytes in, bytes out.</div></div>
+  <div class="phase-row"><span class="phase-num">2</span><div class="phase-text"><strong>Weeks 4–5: Minimal HTTP/1.1 parser.</strong> Parse request line, headers, body from raw bytes. No spec compliance needed — just enough for JSON REST calls.</div></div>
+  <div class="phase-row"><span class="phase-num">3</span><div class="phase-text"><strong>Weeks 6–7: Reflection registry.</strong> Read function signatures at startup, build the dispatch table, generate route strings from function names.</div></div>
+  <div class="phase-row"><span class="phase-num">4</span><div class="phase-text"><strong>Weeks 8–9: Schema engine + validation.</strong> Walk struct fields once, compile validation closures, auto-decode request body into function arguments.</div></div>
+  <div class="phase-row"><span class="phase-num">5</span><div class="phase-text"><strong>Weeks 10–11: Msgpack RPC codec.</strong> Write a minimal msgpack encoder/decoder (the spec is simple). Add protocol detection. Now one function serves both HTTP and RPC clients.</div></div>
+  <div class="phase-row"><span class="phase-num">6</span><div class="phase-text"><strong>Weeks 12–14: OpenAPI generation + streaming.</strong> Generate spec from dispatch table. Add iter.Seq[T] return type → streaming response support.</div></div>
+  <div class="phase-row"><span class="phase-num">7</span><div class="phase-text"><strong>Weeks 15–18: Polish, benchmarks, docs, v0.1.0 release.</strong> Benchmark against Gin/Fiber. Write the "why" blog post. The benchmarks will be the headline.</div></div>
+</div>
+
+<div class="warn-box">
+  <strong>Why this will get used:</strong> Every Go developer has felt the friction of "why do I need to know what Content-Type is to write a function that returns a user?" — Axon answers that. The dual HTTP+RPC protocol means it's not just a curiosity — production teams can adopt it for internal services using the fast RPC path while keeping HTTP for public-facing APIs. The "zero codegen, just functions" pitch writes itself.
+</div>
+
+</div>
+</div>
+
+</div>
